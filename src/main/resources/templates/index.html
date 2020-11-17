@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+<title>Menú</title>
+</head>
+<style>
+h1,ul{
+text-align: center;
+}
+h1{
+margin-top:10%;
+padding:0%; 
+font-family: 'Roboto', sans-serif;
+background:#F1F1F1;
+box-shadow:10px 10px 9px #5AFFFC;
+}
+ul{
+margin-top:5%;
+padding:0%; 
+}
+.borde2{
+padding: 10px 5px 6px;
+margin-top:3%;
+box-shadow:10px 10px 9px #5AFFFC;
+background-color:#F1F1F1;
+}
+.borde2:hover{
+  transform:scale(1.1);
+  animation-name:background-color;
+  animation-duration:500ms;
+  animation-fill-mode:forwards;
+}
+@keyframes background-color{
+  100%{
+    background-color:#5AFFFC;
+  }
+}
+
+a{
+color:black;
+font-family: 'Roboto', sans-serif;
+}
+
+body{
+margin: auto;
+top:5%;
+width:50%;
+height:70%;
+background:black;
+
+  
+}
+.linea{
+  height:5px;
+  width:200px;
+  margin:50px auto;
+  border-radius:50%;
+  position: fixed;
+  left:0%;
+  animation-name: fade;
+  animation-duration:1s;
+  animation-iteration-count:infinite;
+  animation-fill-mode:forwards;
+  background:linear-gradient(35deg, #cff, #5AFFFC);
+  box-shadow:10px 10px 9px #5AFFFC;
+}
+
+@keyframes fade{
+  100%{
+    left:80%;
+    opacity:0.5;
+  }
+}
+
+.texto{
+text-align:right;
+color:#F1F1F1;
+}
+
+.topo{
+margin-top:20%;
+}
+</style>
+<body>
+<H1 >MENÚ</H1>
+<ul>
+	<li  class="borde2">
+		<a  th:href="@{/examenUnidad2/computadora}">COMPUTADORAS</a>
+	</li>
+	<li class="borde2">
+		<a  th:href="@{/examenUnidad2/ticket}">TICKETS</a>
+	</li>
+	<li class="borde2">
+		<a  th:href="@{/examenUnidad2/venta}">VENTAS</a>
+	</li>
+	<li class="borde2">
+		<a  th:href="@{/examenUnidad2/cliente}">CLIENTES</a>
+	</li>
+	<li class="borde2">
+		<a  th:href="@{/examenUnidad2/proveedor}">PROVEEDORES</a>
+	</li>
+</ul>
+
+<div class="linea"></div>
+
+<div class="texto topo">Alumno: Aguilera Arias Luis Eduardo</div>
+<div class="texto">Matricula: 161130412</div>
+<div class="texto">TIC'S</div>
+
+</body>
+</html>

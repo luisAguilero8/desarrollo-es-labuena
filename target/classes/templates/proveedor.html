@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+<title>PROVEEDOR</title>
+</head>
+<style>
+h1, td ,tr{
+text-align: center;
+font-family: 'Roboto', sans-serif;
+
+}
+</style>
+<body>
+
+<h1 th:text=${titulo}></h1>
+
+<table class="table table-striped table-bordered table-hover table-dark" border=1  th:if="${not proveedores.isEmpty()}">
+	<thead>
+		<tr> 
+			<th>ID PROVEEDOR</th>
+			<th>NOMBRE DE LA COMPAÑIA</th>
+			<th>NOMBRE DEL CONTACTO</th>
+			<th>EMAIL</th>
+			<th>RFC</th>
+			<th>TELÉFONO</th>
+			<th>DIRECCIÓN</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="proveedor:${proveedores}">
+			<td th:text="${proveedor.idProveedor}"></td>
+			<td th:text="${proveedor.nombreCompania}"></td>
+			<td th:text="${proveedor.nombreContacto}"></td>
+			<td th:text="${proveedor.email}"></td>
+			<td th:text="${proveedor.rfc}"></td>
+			<td th:text="${proveedor.telefono}"></td>
+			<td th:text="${proveedor.direccion}"></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+<title>VENTAS</title>
+</head>
+<style>
+h1, td,th{
+text-align: center;
+font-family: 'Roboto', sans-serif;
+}
+tbody{
+font-family: 'Roboto', sans-serif;
+}
+</style>
+<body>
+<h1 th:text=${titulo}></h1>
+
+<table class="table table-striped table-bordered table-hover table-dark" border = 1 th:if="${not ventas.isEmpty()}">
+	<thead>
+		<tr> 
+			<th>ID VENTA</th>
+			<th>ID USUARIO</th>
+			<th>FECHA</th>
+			<th>SUBTOTAL</th>
+			<th>IVA</th>
+			<th>COSTO DE ENVIO</th>
+			<th>TOTAL</th>
+			
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="venta:${ventas}">
+			<td th:text="${venta.idVenta}"></td>
+			<td th:text="${venta.idUsuario}"></td>
+			<td th:text="${venta.fecha}"></td>
+			<td th:text="${venta.subTotal}"></td>
+			<td th:text="${venta.iva}"></td>
+			<td th:text="${venta.costoEnvio}"></td>
+			<td th:text="${venta.total}"></td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
